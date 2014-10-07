@@ -1,0 +1,1 @@
+_method=POST&data%5BCoupon%5D%5Bname%5D=Test&data%5BCoupon%5D%5Bdescription%5D=test&data%5BCoupon%5D%5Bnb_available%5D=10&data%5BCoupon%5D%5Bimg_1%5D=we&data%5BCoupon%5D%5Bimg_2%5D=&data%5BCoupon%5D%5Bimg_3%5D=&data%5BCoupon%5D%5Bedition_id%5D=1
