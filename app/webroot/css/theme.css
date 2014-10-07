@@ -55,6 +55,15 @@ h1.rp{
         font-family: 'Arial';
 }
 
+a{
+        color:#008E4F;
+}
+
+a:hover{
+        text-decoration: none;
+        color:#009955; 
+}
+
 p.description{
 
         font-family: 'Arial';
@@ -115,4 +124,41 @@ a.btn-success{
 
 .coupon_thumb_description .btn{
         padding-left: 1em;
+}
+
+.form-control:focus {
+    border: 2px solid ;
+}
+
+.form-control {
+        display: block;
+        height: auto;
+        padding: 1px;
+        font-size: 14px;
+        line-height: 1.428571429;
+        color: #555;
+        vertical-align: middle;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #999999;
+        border-radius: 0px;
+        -webkit-box-shadow: 0 0 0px 0px rgba(0,0,0,0.00);
+        box-shadow: 0 0 0px 0px rgba(0,0,0,0.00);
+        -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s, border-width ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s, border-width ease-in-out .15s;
+}
+
+.people .form-control{
+        width: 85%;
+        float:right;    
+}
+
+.input{
+        margin-bottom: 5px;
+}
+label{
+        font-weight: normal;
+}
+form .required{
+        font-weight:normal;
 }
