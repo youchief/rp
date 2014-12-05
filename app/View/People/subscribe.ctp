@@ -13,6 +13,6 @@
                 ?>
         </fieldset>
         <hr>
-        <?php echo $this->Form->submit(__('Submit'), array('class' => 'btn btn-success')); ?>
+        <?php echo $this->Form->submit(__('Envoyer'), array('class' => 'btn btn-success')); ?>
         <?php echo $this->Form->end(); ?>
 </div>

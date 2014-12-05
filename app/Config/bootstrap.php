@@ -107,3 +107,5 @@ CakeLog::config('error', array(
 ));
 
 CakePlugin::load('Composer', array('bootstrap' => true));
+
+Configure::write('Config.language', 'fra');

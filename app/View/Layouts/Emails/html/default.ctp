@@ -24,7 +24,7 @@
                 <meta name="viewport" content="initial-scale=1.0">    <!-- So that mobile webkit will display zoomed in -->
                 <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
 
-                <title>Bella Vita - Boutique</title>
+                <title>Bella vita - Boutique</title>
                 <style type="text/css">
 
                         /* Resets: see reset.css for details */

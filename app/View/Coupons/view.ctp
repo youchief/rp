@@ -17,6 +17,11 @@
                 </div>
                 <div class="col-xs-4">
                         <p class="site">
+                                Délai de participation:
+                                <br>
+                                <?php echo $this->Time->format($coupon['Edition']['date'], '%e %B %Y')?>
+                                <br>
+                                <br>
                                 Plus d'info:
                                 <br>
                                 <?php echo $this->Text->autoLink($coupon['Coupon']['website'], array('target' => '_blank')); ?>

@@ -15,7 +15,7 @@
         <?php echo $this->fetch('meta'); ?>
         
         <title>
-            Bella Vita - Boutique
+            Bella Vita - Vos offres 
         </title>
         
         <?php

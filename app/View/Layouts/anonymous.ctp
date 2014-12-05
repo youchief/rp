@@ -19,7 +19,7 @@
                 <?php echo $this->fetch('meta'); ?>
 
                 <title>
-                        Bella vita - Boutique
+                        Bella vita - Vos offres 
                 </title>
 
                 <?php
@@ -55,7 +55,8 @@
                         <div id="content" class="container">
                                 <div class="row">
                                         <div class="col-sm-12">
-                                                <h1 class="rp">Bella vita Privilèges</h1>
+                                                <h1 class="rp">Vos offres</h1>
+                                                <h2 class="header">Tirage au sort</h2>
                                         </div>
                                 </div>
                                 <?php

@@ -80,7 +80,10 @@ class PeopleController extends AppController {
 
                         if ($this->Person->save($this->request->data)) {
                                 //$this->_notifyparticipation($coupon_id, $this->Person->getLastInsertID());
-                                $this->Session->setFlash(__('Merci pour votre participation à: ') . strtoupper($coupon['Coupon']['name']) . ". Vous pouvez également participer à d'autres privilèges.", 'default', array('class' => 'alert alert-success'));
+                                $this->Session->setFlash(__('Merci pour votre participation au tirage au sort pour: ') 
+                                        . strtoupper($coupon['Coupon']['name'])
+                                        .".<br><strong>Seul les gagnants seront avertis par courriel</strong>"
+                                        . ".<br>Vous pouvez également participer à d'autres privilèges.", 'default', array('class' => 'alert alert-success'));
 
                                 return $this->redirect(array('controller' => 'coupons', 'action' => 'shop'));
                         } else {

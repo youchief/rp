@@ -47,6 +47,12 @@ h2{
 
 }
 
+h2.header{
+        margin-bottom: 15px;
+font-weight: bold;
+color: #4B4B4D;
+}
+
 h1.rp{
         color: #4b4b4d;
         margin-bottom: 37px;
@@ -114,6 +120,7 @@ a.btn_participer{
 
 a.btn-success{
         background: #279459;
+        border: 1px solid #00812E;
 }
 
 .coupon_thumb_description p{

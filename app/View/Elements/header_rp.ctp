@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Bella Vita - Privilèges</a>
+            <a class="navbar-brand" href="#">Bella vita Vos offres </a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">

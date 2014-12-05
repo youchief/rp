@@ -8,7 +8,7 @@
                                 </div>
                                 <div class="coupon_thumb_description">
                                         <div class="col-xs-7">
-                                                <p><?php echo $this->Text->truncate($coupon['Coupon']['short_description'], 150) ?></p>
+                                                <p><?php echo $this->Text->truncate($coupon['Coupon']['short_description'], 70) ?></p>
                                         </div>
                                         <div class="col-xs-5">
                                                 <p><?php echo $this->Html->link(__('Voir l\'offre'), array('controller' => 'coupons', 'action' => 'view', $coupon['Coupon']['id']), array('class' => 'btn btn-success', 'escape' => false)) ?></p>
