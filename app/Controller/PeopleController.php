@@ -83,7 +83,7 @@ class PeopleController extends AppController {
                                 $this->Session->setFlash(__('Merci pour votre participation au tirage au sort pour: ') 
                                         . strtoupper($coupon['Coupon']['name'])
                                         .".<br><strong>Seul les gagnants seront avertis par courriel</strong>"
-                                        . ".<br>Vous pouvez également participer à d'autres privilèges.", 'default', array('class' => 'alert alert-success'));
+                                        . ".<br>Vous pouvez également participer à d'autres offres.", 'default', array('class' => 'alert alert-success'));
 
                                 return $this->redirect(array('controller' => 'coupons', 'action' => 'shop'));
                         } else {

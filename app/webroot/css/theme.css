@@ -177,6 +177,7 @@ a.btn-success{
 }
 label{
         font-weight: normal;
+        font-size:12px;
 }
 form .required{
         font-weight:normal;
@@ -201,8 +202,9 @@ form .required{
         background: none;
         background-color: #d8d9da;
         color: #4b4b4d;
-        padding: 2px 4px;
+        padding: 4px 4px;
         border: 0px;
+        font-size:13px;
         font-weight: bold;
         filter: none;
         border-radius: 0px;
