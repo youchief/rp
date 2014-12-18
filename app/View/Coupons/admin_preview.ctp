@@ -1,3 +1,8 @@
+<style>
+        .container{
+                width:700px;
+        }
+</style>
 <?php $this->layout = 'anonymous' ?>
 
 <div class="row"   id="">

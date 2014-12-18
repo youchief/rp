@@ -38,7 +38,7 @@
         <![endif]-->
     </head>
     <body>
-        <div id="container" >
+        <div id="container" width="700px">
             
             <!--[if lt IE 8]>
                 <div class="container">

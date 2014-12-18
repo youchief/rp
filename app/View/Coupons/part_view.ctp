@@ -1,13 +1,7 @@
-<style>
-        .container{
-                width:700px;
-        }
-</style>
-<?php $this->layout = 'anonymous' ?>
 <div class="coupon">
         <div class="row">
                 <div class="col-xs-12">
-                        <h1><?php echo $coupon['Coupon']['name']; ?></h1>
+                        <h1><?php echo h($coupon['Coupon']['name']); ?></h1>
                         <h2><?php echo $coupon['Coupon']['short_description'] ?></h2>
 
                 </div>
@@ -32,7 +26,7 @@
                                 <br>
                                 <?php echo $this->Text->autoLink($coupon['Coupon']['website'], array('target' => '_blank')); ?>
                         </p>
-                        <p><?php echo $this->Html->link(__('Participer au tirage au sort'), array('controller' => 'people', 'action' => 'checkcode', $coupon['Coupon']['id']), array('class' => 'btn btn-sm btn-success btn_participer')); ?></p>
+                        <p><?php echo $this->Html->link(__('Participer'), array('controller' => 'people', 'action' => 'checkcode', $coupon['Coupon']['id']), array('class' => 'btn btn-sm btn-success btn_participer')); ?></p>
                 </div>
         </div>
         <div class="row">
@@ -46,6 +40,5 @@
                 </div>                        
 
         </div>
-
 </div>
 
