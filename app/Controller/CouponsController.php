@@ -24,10 +24,29 @@ class CouponsController extends AppController {
          *
          * @return void
          */
-        
         public function shop() {
                 $this->Coupon->recursive = 0;
+                $this->Paginator->settings = array(
+                    'limit' => 4
+                );
                 $this->set('coupons', $this->Paginator->paginate());
+        }
+
+        
+        public function admin_preview() {
+                $this->Coupon->recursive = 0;
+                $this->Paginator->settings = array(
+                    'limit' => 4
+                );
+                $this->set('coupons', $this->Paginator->paginate());
+        }
+        
+        public function admin_preview_detail($id = null) {
+                if (!$this->Coupon->exists($id)) {
+                        throw new NotFoundException(__('Invalid coupon'));
+                }
+                $options = array('conditions' => array('Coupon.' . $this->Coupon->primaryKey => $id));
+                $this->set('coupon', $this->Coupon->find('first', $options));
         }
         
         public function view($id = null) {
@@ -37,7 +56,7 @@ class CouponsController extends AppController {
                 $options = array('conditions' => array('Coupon.' . $this->Coupon->primaryKey => $id));
                 $this->set('coupon', $this->Coupon->find('first', $options));
         }
-        
+
         public function admin_index() {
                 $this->Coupon->recursive = 0;
                 $this->set('coupons', $this->Paginator->paginate());
@@ -46,21 +65,21 @@ class CouponsController extends AppController {
         public function admin_lotery($coupon_id) {
                 $coupon = $this->Coupon->findById($coupon_id);
                 $people = $coupon['Person'];
-                
-                if(count($people) < $coupon['Coupon']['nb_available']){
+
+                if (count($people) < $coupon['Coupon']['nb_available']) {
                         $this->Session->setFlash(__('Il y a plus de prix que de participant!'), 'default', array('class' => 'alert alert-danger'));
                         $this->redirect($this->referer());
                 }
-                
-                
-                if(count($people) < 3){
+
+
+                if (count($people) < 3) {
                         $this->Session->setFlash(__('Vous devez avoir au moins 3 participants!'), 'default', array('class' => 'alert alert-danger'));
                         $this->redirect($this->referer());
                 }
-                
+
                 $winner_int = array_rand($people, $coupon['Coupon']['nb_available']);
-               
-                
+
+
                 $winners = array();
                 foreach ($winner_int as $int) {
                         $winners[] = $people[$int];
@@ -185,25 +204,23 @@ class CouponsController extends AppController {
                 $this->Session->setFlash(__('Coupon was not deleted'), 'default', array('class' => 'alert alert-error'));
                 return $this->redirect(array('action' => 'index'));
         }
-        
-        
-        public function part_view($id){
-                 if (!$this->Coupon->exists($id)) {
+
+        public function part_view($id) {
+                if (!$this->Coupon->exists($id)) {
                         throw new NotFoundException(__('Invalid coupon'));
                 }
                 $options = array('conditions' => array('Coupon.' . $this->Coupon->primaryKey => $id));
                 $this->set('coupon', $this->Coupon->find('first', $options));
         }
-        
-        public function part_index(){
-                 $this->Coupon->recursive = 0;
+
+        public function part_index() {
+                $this->Coupon->recursive = 0;
                 $this->set('coupons', $this->Paginator->paginate());
         }
-        
-        public function admin_print($coupon_id){
-                $winners = $this->Coupon->Person->find('all', array('conditions'=>array('Person.coupon_id'=>$coupon_id, 'Person.winner'=>1)));
+
+        public function admin_print($coupon_id) {
+                $winners = $this->Coupon->Person->find('all', array('conditions' => array('Person.coupon_id' => $coupon_id, 'Person.winner' => 1)));
                 $this->set('people', $winners);
-                
         }
 
 }

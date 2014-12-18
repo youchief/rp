@@ -3,8 +3,8 @@
                 <div class="coupon">
                         <div class="row">
                                 <div class="col-sm-12">
-                                        <h1><?php echo h($coupon['Coupon']['name']); ?></h1>
-                                        <h2><?php echo $coupon['Coupon']['short_description'] ?> *</h2>
+                                        <h1><?php echo $coupon['Coupon']['name']; ?></h1>
+                                        <h2><?php echo $coupon['Coupon']['short_description'] ?></h2>
 
                                 </div>
                         </div>
@@ -19,6 +19,11 @@
                                 </div>
                                 <div class="col-sm-4">
                                         <p class="site">
+                                                Délai de participation:
+                                                <br>
+                                                <?php echo $this->Time->format($coupon['Coupon']['deadline'], '%e %B %Y') ?>
+                                                <br>
+                                                <br>
                                                 Plus d'info:
                                                 <br>
                                                 <?php echo $this->Text->autoLink($coupon['Coupon']['website'], array('target' => '_blank')); ?>
@@ -37,27 +42,22 @@
                                 </div>                        
 
                         </div>
-                        <div class='row'>
-                                <div class='col-sm-12'>
-                                        <p class='legend'>* Avantages exclusifs réservés à la clientèle de Retraites Populaires</p>
-                                </div>
-                        </div>
                 </div>
         </div>
         <div class='col-sm-4'>
                 <?php if ($coupon['Coupon']['active'] == 1): ?>
                         <div class="alert alert-success" role="alert">EN COURS</div>
-                        
-                        
+
+
                         <div class="btn-group">
                                 <?php echo $this->Html->link(__('Tirage au sort'), array('action' => 'lotery', $coupon['Coupon']['id']), array('class' => 'btn btn-sm btn-primary')); ?>
-                               
+
                                 <?php echo $this->Html->link(__('Fermer ce coupon'), array('action' => 'close', $coupon['Coupon']['id']), array('class' => 'btn btn-sm btn-danger')); ?>
                         </div>
                 <?php else: ?>
                         <div class="alert alert-danger" role="alert">TERMINE</div>
 
-                         <?php echo $this->Html->link(__('Imprimer la liste des gagnants'), array('action' => 'print', $coupon['Coupon']['id']), array('class' => 'btn btn-sm btn-primary', 'target' => '_blank')); ?>
+                        <?php echo $this->Html->link(__('Imprimer la liste des gagnants'), array('action' => 'print', $coupon['Coupon']['id']), array('class' => 'btn btn-sm btn-primary', 'target' => '_blank')); ?>
                 <?php endif; ?>
         </div>
 </div>

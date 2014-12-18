@@ -1,5 +1,6 @@
 <div class="coupons index">
         <h2><?php echo __('Coupons'); ?> <?php echo $this->Html->link(\__('+'), array('action' => 'add'), array('class' => 'btn btn-success btn-sm')); ?></h2>
+        
         <table cellpadding="0" cellspacing="0" class="table">
                 <tr>
                         <th><?php echo $this->Paginator->sort('name'); ?></th>

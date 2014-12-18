@@ -1,12 +1,11 @@
 <div class="editions form">
 <?php echo $this->Form->create('Edition'); ?>
 	<fieldset>
-		<legend><?php echo __('Entrez votre code'); ?></legend>
 	<?php
-		echo $this->Form->input('code', array('class'=>'form-control', 'after'=>'Ce code se trouve dans votre dernier Bella vita page 2'));
+		echo $this->Form->input('code', array('class'=>'form-control', 'label'=>'Code (voir votre dernier <i>Bella vita</i>)'));
 	?>
 	</fieldset>
-        <hr>
-<?php echo $this->Form->submit(__('Envoyer'), array('class'=>'btn btn-success')); ?>
+        <br>
+<?php echo $this->Form->submit(__('Envoyer'), array('class'=>'btn btn-rp')); ?>
 <?php echo $this->Form->end(); ?>
 </div>

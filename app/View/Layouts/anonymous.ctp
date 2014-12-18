@@ -53,20 +53,14 @@
                                 
 
                         <div id="content" class="container">
-                                <div class="row">
-                                        <div class="col-sm-12">
-                                                <h1 class="rp">Vos offres</h1>
-                                                <h2 class="header">Tirage au sort</h2>
-                                        </div>
-                                </div>
+                                
                                 <?php
                                 echo $this->Session->flash();
                                 echo $this->fetch('content');
                                 ?>
                         </div>
 
-                        <?php echo $this->element('footer_anonymous'); ?>
-
+                        
                 </div>
 
                 <?php

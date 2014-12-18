@@ -1,3 +1,7 @@
+body{
+        background-color:transparent
+}
+
 dd{
         margin: 1em;
 }
@@ -15,7 +19,10 @@ dl dd:nth-child(4n+2), dl dt:nth-child(4n+1) {
 
 
 .container{
-        width:700px;
+       // width:670px;
+        margin-top: 0em;
+        padding-left: 0px;
+        padding-right: 15px;
 }
 
 .coupon{
@@ -49,8 +56,8 @@ h2{
 
 h2.header{
         margin-bottom: 15px;
-font-weight: bold;
-color: #4B4B4D;
+        font-weight: bold;
+        color: #4B4B4D;
 }
 
 h1.rp{
@@ -78,27 +85,31 @@ p.description{
 }
 
 .header_h3{
-        top:-65px;
         position: relative;
-        background-image: url('../img/back_title_coupons.png');
 }
 
 
 .header_h3 h3{
         color:white;
         text-align: center;
+        width:100%;
         text-transform: uppercase;
         font-size: 15px;
         padding: 1em;
+        position: absolute;
+        bottom: 0;
+        margin-bottom:0px;
+        z-index:5;
+        margin-top: 0px;
+        background-image:url('../img/back_title_coupons.png');
 
 }
 .coupon_thumb_description{
-        top:-75px;
         background-image: url('../img/back_coupons.png');
         border-bottom-right-radius: 40px;
         height:100px;
-        position: relative;
 }
+
 
 img.poster{
         border-top-left-radius: 40px;
@@ -116,6 +127,7 @@ p.legend{
 
 a.btn_participer{
         margin-top: 2em;
+        font-size: 14px;
 }
 
 a.btn-success{
@@ -124,7 +136,7 @@ a.btn-success{
 }
 
 .coupon_thumb_description p{
-        padding-top: 1em;
+        padding-top: 0.5em;
         font-size: 15px;
         color: #898989;
 }
@@ -134,7 +146,7 @@ a.btn-success{
 }
 
 .form-control:focus {
-    border: 2px solid ;
+        border: 2px solid ;
 }
 
 .form-control {
@@ -168,4 +180,35 @@ label{
 }
 form .required{
         font-weight:normal;
+}
+
+
+.pic_view{
+        margin-bottom: 2em;
+}
+
+.thumbnail {
+
+        margin-bottom: 12px;
+
+}
+
+#mainImage{
+        margin-bottom: 1.5em;
+}
+
+.btn-rp{
+        background: none;
+        background-color: #d8d9da;
+        color: #4b4b4d;
+        padding: 2px 4px;
+        border: 0px;
+        font-weight: bold;
+        filter: none;
+        border-radius: 0px;
+}
+
+.btn-rp:hover{
+         background-color: #4b4b4d;
+         color: white;
 }

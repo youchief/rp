@@ -5,9 +5,10 @@
                 <?php
                 echo $this->Form->input('id', array('class' => 'form-control'));
                 echo $this->Form->input('name', array('class' => 'form-control'));
+                echo $this->Form->input('short_description_index', array('class' => 'form-control'));
                 echo $this->Form->input('short_description', array('class' => 'form-control'));
                 echo $this->Form->input('date_place_condition', array('class' => 'form-control'));
-
+                echo $this->Form->input('deadline', array('class' => 'date'));
                 echo $this->Form->input('description', array('class' => 'form-control'));
                 echo $this->Form->input('website', array('class' => 'form-control'));
                 echo $this->Form->input('nb_available', array('class' => 'form-control'));

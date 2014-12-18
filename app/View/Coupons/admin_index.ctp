@@ -1,5 +1,8 @@
 <div class="index">
         <h2><?php echo __('Coupons'); ?> <?php echo $this->Html->link(\__('+'), array('action' => 'add'), array('class' => 'btn btn-success btn-sm')); ?></h2>
+        <div class="text-right">
+                <?php echo $this->Html->link(__('Aperçu client'), array('action' => 'preview'), array('class' => 'btn btn-default', 'target'=>'_blank')); ?>
+        </div>
         <table cellpadding="0" cellspacing="0" class="table">
                 <tr>
                         <th><?php echo $this->Paginator->sort('name'); ?></th>
@@ -9,8 +12,9 @@
                         <th class="actions"><?php echo __('Actions'); ?></th>
                 </tr>
                 <?php foreach ($coupons as $coupon): ?>
+                
                         <tr>
-                                <td><?php echo h($coupon['Coupon']['name']); ?>&nbsp;</td>
+                                <td><?php echo $coupon['Coupon']['name']; ?>&nbsp;</td>
                                 <td>
                                         <?php echo $this->Html->link($coupon['Edition']['name'], array('controller' => 'editions', 'action' => 'view', $coupon['Edition']['id'])); ?>
                                 </td>

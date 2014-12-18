@@ -1,3 +1,4 @@
+<?php $this->layout = 'anonymous' ?>
 <div class="coupon">
         <div class="row">
                 <div class="col-xs-12">
@@ -22,11 +23,9 @@
                                 <?php echo $this->Time->format($coupon['Coupon']['deadline'], '%e %B %Y')?>
                                 <br>
                                 <br>
-                                <?php if (!empty($coupon['Coupon']['website'])):?>
                                 Plus d'info:
                                 <br>
                                 <?php echo $this->Text->autoLink($coupon['Coupon']['website'], array('target' => '_blank')); ?>
-                                <?php endif;?>
                         </p>
                         <p><?php echo $this->Html->link(__('Participer au tirage au sort'), array('controller' => 'people', 'action' => 'checkcode', $coupon['Coupon']['id']), array('class' => 'btn btn-sm btn-success btn_participer')); ?></p>
                 </div>
@@ -42,6 +41,6 @@
                 </div>                        
 
         </div>
-       
+
 </div>
 
