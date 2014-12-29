@@ -42,7 +42,7 @@ class PeopleController extends AppController {
 
                         if ($coupon['Coupon']['active'] == 0) {
                                 $this->Session->setFlash(__("Ce concours est maintenant terminé, rendez-vous prochainement pour d'autre privilèges"), 'default', array('class' => 'alert alert-danger'));
-                                $this->redirect(array('controller'=>'coupons', 'action'=>'shop'));
+                                $this->redirect(array('controller' => 'coupons', 'action' => 'shop'));
                         }
 
                         $this->Person->Coupon->Edition->recursive = -1;
@@ -85,12 +85,6 @@ class PeopleController extends AppController {
 
                         if ($this->Person->save($this->request->data)) {
                                 //$this->_notifyparticipation($coupon_id, $this->Person->getLastInsertID());
-                                /*$this->Session->setFlash(__('Merci pour votre participation au tirage au sort pour: ')
-                                        . strtoupper($coupon['Coupon']['name'])
-                                        . ".<br><strong>Seul les gagnants seront avertis par courriel</strong>"
-                                        . ".<br>Vous pouvez également participer à d'autres privilèges.", 'default', array('class' => 'alert alert-success'));
-                                 * 
-                                 */
 
 
                                 return $this->redirect(array('action' => 'thanks', $coupon['Coupon']['name']));
@@ -102,9 +96,8 @@ class PeopleController extends AppController {
                 $coupon = $this->Person->Coupon->findById($coupon_id);
                 $this->set('coupon', $coupon);
         }
-        
-        
-        public function thanks($coupon_name){
+
+        public function thanks($coupon_name) {
                 $this->set('coupon', $coupon_name);
         }
 
