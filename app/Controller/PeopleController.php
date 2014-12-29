@@ -35,17 +35,20 @@ class PeopleController extends AppController {
         }
 
         public function code($coupon_id) {
+
+
                 if ($this->request->is('post')) {
                         $coupon = $this->Person->Coupon->findById($coupon_id);
+
                         if ($coupon['Coupon']['active'] == 0) {
                                 $this->Session->setFlash(__("Ce concours est maintenant terminé, rendez-vous prochainement pour d'autre privilèges"), 'default', array('class' => 'alert alert-danger'));
-                                $this->redirect($this->referer());
+                                $this->redirect(array('controller'=>'coupons', 'action'=>'shop'));
                         }
 
                         $this->Person->Coupon->Edition->recursive = -1;
                         $edition = $this->Person->Coupon->Edition->find('first', array('conditions' => array('Edition.active' => 1)));
                         if ($this->request->data['Edition']['code'] == $edition['Edition']['code']) {
-                                $this->Session->write('code', 1);
+                                //$this->Session->write('code', 1);
                                 $this->redirect(array('action' => 'subscribe', $coupon_id));
                         } else {
                                 $this->Session->setFlash(__('Code erroné'), 'default', array('class' => 'alert alert-danger'));
@@ -59,11 +62,13 @@ class PeopleController extends AppController {
          * @return void
          */
         public function subscribe($coupon_id) {
-
-                $codechecked = $this->Session->read('code');
-                if (!$codechecked) {
-                        $this->redirect(array('action' => 'code', $coupon_id));
-                }
+                /*
+                  $codechecked = $this->Session->read('code');
+                  if (!$codechecked) {
+                  $this->redirect(array('action' => 'code', $coupon_id));
+                  }
+                 * 
+                 */
 
                 if ($this->request->is('post')) {
                         $this->Person->create();
@@ -80,12 +85,15 @@ class PeopleController extends AppController {
 
                         if ($this->Person->save($this->request->data)) {
                                 //$this->_notifyparticipation($coupon_id, $this->Person->getLastInsertID());
-                                $this->Session->setFlash(__('Merci pour votre participation au tirage au sort pour: ') 
+                                /*$this->Session->setFlash(__('Merci pour votre participation au tirage au sort pour: ')
                                         . strtoupper($coupon['Coupon']['name'])
-                                        .".<br><strong>Seul les gagnants seront avertis par courriel</strong>"
+                                        . ".<br><strong>Seul les gagnants seront avertis par courriel</strong>"
                                         . ".<br>Vous pouvez également participer à d'autres privilèges.", 'default', array('class' => 'alert alert-success'));
+                                 * 
+                                 */
 
-                                return $this->redirect(array('controller' => 'coupons', 'action' => 'shop'));
+
+                                return $this->redirect(array('action' => 'thanks', $coupon['Coupon']['name']));
                         } else {
                                 
                         }
@@ -93,6 +101,11 @@ class PeopleController extends AppController {
                 //$this->Captcha = $this->Components->load('Captcha', array('captchaType' => 'image', 'jquerylib' => true, 'modelName' => 'Person', 'fieldName' => 'captcha')); //load it
                 $coupon = $this->Person->Coupon->findById($coupon_id);
                 $this->set('coupon', $coupon);
+        }
+        
+        
+        public function thanks($coupon_name){
+                $this->set('coupon', $coupon_name);
         }
 
         public function _notifyparticipation($coupon_id, $person_id) {

@@ -30,7 +30,7 @@ class AppController extends Controller {
         public function beforeFilter() {
 
                 //$this->isAuthorized($this->Auth->user());
-                $this->Auth->allow(array('display', 'logout', 'login', 'shop', 'view', 'admin_logout', 'subscribe', 'code', 'checkcode'));
+                $this->Auth->allow(array('display', 'logout', 'login', 'shop', 'view', 'admin_logout', 'subscribe', 'code', 'checkcode', 'thanks'));
         }
 
         public function beforeRender() {

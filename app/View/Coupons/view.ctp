@@ -28,7 +28,7 @@
                                 <?php echo $this->Text->autoLink($coupon['Coupon']['website'], array('target' => '_blank')); ?>
                                 <?php endif;?>
                         </p>
-                        <p><?php echo $this->Html->link(__('Participer au tirage au sort'), array('controller' => 'people', 'action' => 'checkcode', $coupon['Coupon']['id']), array('class' => 'btn btn-sm btn-success btn_participer')); ?></p>
+                        <p><?php echo $this->Html->link(__('Participer au tirage au sort'), array('controller' => 'people', 'action' => 'code', $coupon['Coupon']['id']), array('class' => 'btn btn-sm btn-success btn_participer')); ?></p>
                 </div>
         </div>
         <div class="row">
